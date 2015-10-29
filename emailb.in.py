@@ -32,23 +32,8 @@ class emailDict(dict):
 
 inbox = Inbox()
 maildir = emailDict()
-email_template = """
-<html>
-<head>
-</head>
-<style>
-pre {{
-    white-space: pre-wrap;
-    }}
-</style>
-<body>
-welcome to emailb.in, your emails are below
-
-<pre>{emails}</pre>
-
-</body>
-</html>
-"""
+f = open('html/templates/index.html', 'r')
+email_template = f.read()
 
 @inbox.collate
 def handle(to, sender, subject, body):
