@@ -48,7 +48,7 @@ def handle(to, sender, subject, body):
                 if len(email) > 0:
                     email_concat += "\n----------BEGIN EMAIL----------\n" + html.escape(email) +\
                                     "\n----------END EMAIL----------\n"
-            emails = email_template.format(emails=email_concat)
+            emails = email_template.format(emails=email_concat, addy=recip)
             f.write(emails)
             f.close()
     except IOError:
