@@ -32,7 +32,7 @@ class emailDict(dict):
 
 inbox = Inbox()
 maildir = emailDict()
-f = open('html/templates/index.html', 'r')
+f = open('/webroot/templates/index.html', 'r')
 email_template = f.read()
 
 @inbox.collate
